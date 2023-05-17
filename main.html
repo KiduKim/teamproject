@@ -2,26 +2,28 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
     <style>
         body {
-            
             padding-bottom:  60px;
-            margin : 0px;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 0%;
         }
         div#menu{
             z-index: 1;
             background-color: white;
             position:fixed; 
-            top:0;
-            width:100%;
+            width:80%;
+            margin-top: 0px;
         }
         h2{
+            font-weight: bold;
+            color: darkblue;
             margin-top:30px;
             font-size:15px;
-            margin-left:75px;
         }
         header{
-            color:black;
             text-align: right;
             width: 20%;
             height: 100px;
@@ -29,45 +31,48 @@
         }
         nav{
             float:left;
-            width: 75%;
+            width: 80%;
             height: 100px;
         }
         ul{
             list-style:none;
-            padding:50px 300px;
+            padding:50px 200px;
         }
         ul li{
-            color:black;
-            font-weight:bold;
             display:inline;
             padding: 0 10px;
             letter-spacing: 5px;
         }
         a{
-            color: black;
+            color: darkblue;
+            font-weight: bold;
             text-decoration-line: none;
         }
         div#line{
-            border-bottom:0.2px solid lightgray;
+            border-bottom: 7px solid darkblue;
             height:10px;
             clear:both;
         }
-        div#main{
+        div#line-2{
+            border-bottom: 7px solid lightgray;
+            height:10px;
             clear:both;
-            margin-top:30px;
-            margin-left:120px;
+        }
+        img#title{
+            clear:both;
             font-weight: bold;
             font-size:200%;
-            text-align: center;
             margin-bottom:30px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
         }
         div#body{
             z-index: 2;
-            padding-top:100px;
+            padding-top: 3%;
         }
         .topic{
             background-color: white;
-            margin-left:15%; /*좌우 간격을 위한 마진조정*/
             display:grid;
             grid-template-columns: 230px 230px 230px 230px;
             grid-gap: 15px;
@@ -89,7 +94,7 @@
             width:300px;
             font-weight: bold;
         }
-        img{
+        img#sub{
             border-radius: 5px;
             padding-bottom: 10px;
             width:230px;
@@ -107,7 +112,19 @@
         }
         .subtopic a:hover img{ /*.subtopic a:focus img*/
             transform: scale(1.2);
-        } 
+        }
+        .title-container{
+            position: relative;
+            display: inline-block;
+        }
+        .title-text{
+            position: absolute;
+            top: 60%;
+            left: 5%;
+            color: white;
+            font-size: 500%;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -122,26 +139,48 @@
         </nav>
         <div id="line"> </div>
 </div>
-<div id="body">
-    <div id="main">관심사별 관광지</div><br/>
-    <div class="topic">
-        <div class="subtopic"><a href='#'><img src="picture/main/food-main.jpg"><span class="imtext">지역별 맛집</span></a></div>
-        <div class="subtopic"><a href='#'><img src="picture/main/history-main.jpg"><span class="imtext">한국의</br>역사유적</span></a></div>
-        <div class="subtopic"><a href='#'><img src="picture/main/mountain-main.jpg"><span class="imtext">한국의 산</span></a></div>
-        <div class="subtopic"><a href='#'><img src="picture/main/beach-main.jpg"><span class="imtext">바다와 해변</span></a></div>
-    </div>
-    <div class="topic">
-        <div class="subtopic"><a href='#'><img src="picture/main/activity-main.jpg"><span class="imtext">액티비티</br>추천</span></a></div>
-        <div class="subtopic"><a href='#'><img src="picture/main/festival-main.jpg"><span class="imtext">한국의 축제</span></a></div>
-        <div class="subtopic"><a href='#'><img src="picture/main/shopping-main.jpg"><span class="imtext">Shopping</span></a></div>
-        <div class="subtopic"><a href='#'><img src="picture/main/culture-main.jpg"><span class="imtext">한국의</br>전통문화</span></a></div>
-    </div>
-    <div class="topic">
-        <div class="subtopic"><a href='#'><img src="picture/main/insta-main.jpg"><span class="imtext">인스타 핫플</span></a></div>
-        <div class="subtopic"><a href='#'><img src="picture/main/artwork-main.jpg"><span class="imtext">예술감상</span></a></div>
-        <div class="subtopic"><a href='#'><img src="picture/main/themepark-main.jpg"><span class="imtext">짜릿한</br>테마파크</span></a></div>
-        <div class="subtopic"><a href='#'><img src="picture/main/sports-main.jpg"><span class="imtext">다양한</br>스포츠</span></a></div>
-    </div>
+<div id="title">
+    <div class="title-container">
+        <img id="title" src="picture/main/title-main.jpg">
+        <span class="title-text">당신을 위한</br>여행지를 찾아볼까요?<span>
+    </div><br/>
 </div>
+<div id="intro">
+    <p style="color: darkblue; font-size: 300%; font-weight:bold; font-family:'nanumpenscript'; margin-bottom:0px;">
+        <strong>여행지의 새로운 기준을 제시합니다</strong>
+        <br/>테마별& 지역별 관광지를 소개합니다
+    </p>
+    <div id="line-2"></div>
+    <p style="color:  gray; font-size: 130%; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >
+              <em>코로나19로 인해 여행을 못한 지난 시간 동안, 우리는 여행에 대한 갈망을 더욱 키워왔습니다. 이제 2023년, 코로나 방역 수칙이 점차 완화되면서 해외 여행지와 더불어 국내 여행지도 다시 주목받고 있습니다. 우리나라에는 다채롭고 아름다운 여행지가 곳곳에 숨어있습니다. 푸른 바다와 아름다운 해변을 만끽할 수 있는 해안도로, 역사와 문화를 체험할 수 있는 유적지, 자연 속에서 즐길 수 있는 산과 계곡들, 그리고 맛있는 음식과 함께하는 지역별 맛집들까지. 다양한 매력으로 가득한 국내 여행지를 추천해 드립니다. 함께 멋진 추억을 만들어보세요!</em>
+    </p>
+</div>
+<p style="margin-top:10%; color: darkblue; font-size: 270%; font-weight:bold; font-family:'nanumpenscript'; margin-bottom:0px; margin-bottom:0px;">
+    테마별 여행지</p>
+<div id="line-2"></div>
+<div id="body">
+    <div class="topic">
+        <div class="subtopic"><a href='#'><img id="sub" src="picture/main/food-main.jpg"><span class="imtext">지역별 맛집</span></a></div>
+        <div class="subtopic"><a href='#'><img id="sub" src="picture/main/history-main.jpg"><span class="imtext">한국의</br>역사유적</span></a></div>
+        <div class="subtopic"><a href='#'><img id="sub" src="picture/main/mountain-main.jpg"><span class="imtext">한국의 산</span></a></div>
+        <div class="subtopic"><a href='#'><img id="sub" src="picture/main/beach-main.jpg"><span class="imtext">바다와 해변</span></a></div>
+    </div>
+    <div class="topic">
+        <div class="subtopic"><a href='#'><img id="sub" src="picture/main/activity-main.jpg"><span class="imtext">액티비티</br>추천</span></a></div>
+        <div class="subtopic"><a href='#'><img id="sub" src="picture/main/festival-main.jpg"><span class="imtext">한국의 축제</span></a></div>
+        <div class="subtopic"><a href='#'><img id="sub" src="picture/main/shopping-main.jpg"><span class="imtext">Shopping</span></a></div>
+        <div class="subtopic"><a href='#'><img id="sub" src="picture/main/culture-main.jpg"><span class="imtext">한국의</br>전통문화</span></a></div>
+    </div>
+    <div class="topic">
+        <div class="subtopic"><a href='#'><img id="sub" src="picture/main/insta-main.jpg"><span class="imtext">인스타 핫플</span></a></div>
+        <div class="subtopic"><a href='#'><img id="sub" src="picture/main/artwork-main.jpg"><span class="imtext">예술감상</span></a></div>
+        <div class="subtopic"><a href='#'><img id="sub" src="picture/main/themepark-main.jpg"><span class="imtext">짜릿한</br>테마파크</span></a></div>
+        <div class="subtopic"><a href='#'><img id="sub" src="picture/main/sports-main.jpg"><span class="imtext">다양한</br>스포츠</span></a></div>
+    </div>
+    <p style="color: darkblue; font-size: 270%; font-weight:bold; font-family:'nanumpenscript'; margin-bottom:0px;">
+        지역별 여행지</p>
+    <div id="line-2"></div>
+</div>
+
 </body>
 </html>
