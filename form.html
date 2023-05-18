@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function scrollToTema() {
+            var mainWindow = window.open('main.html', '_blank');
+            mainWindow.onload = function() {
+            var element = mainWindow.document.getElementById('tema');
+            var yOffset = -200;
+
+            if (element) {
+                var rect = element.getBoundingClientRect();
+                var absoluteY = rect.top + mainWindow.pageYOffset;
+                var targetY = absoluteY + yOffset;
+                mainWindow.scrollTo({ top: targetY, behavior: 'smooth' });
+            }
+            };
+        }
+        function scrollToRegion(){
+            var mainWindow = window.open('main.html', '_blank');
+            mainWindow.onload = function() {
+            var element = mainWindow.document.getElementById('Region');
+            var yOffset = -200;
+
+            if (element) {
+                var rect = element.getBoundingClientRect();
+                var absoluteY = rect.top + mainWindow.pageYOffset;
+                var targetY = absoluteY + yOffset;
+                mainWindow.scrollTo({ top: targetY, behavior: 'smooth' });
+            }
+            };
+        }
+    </script>
+    <style>
+        html{
+	        scroll-behavior: smooth;
+        }
+        body {
+            padding-bottom:  60px;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 0%;
+        }
+        div#menu{
+            z-index: 3;
+            background-color: white;
+            position:fixed; 
+            width:80%;
+            margin-top: 0px;
+        }
+        h2{
+            font-weight: bold;
+            color: darkblue;
+            margin-top:30px;
+            font-size:15px;
+        }
+        header{
+            text-align: right;
+            width: 20%;
+            height: 100px;
+            float:left;
+        }
+        .taeguk{
+            position:absolute;
+            width:35px;
+            height:35px;
+            left:90px;
+            top:40px;
+        }
+        nav{
+            float:left;
+            width: 80%;
+            height: 100px;
+        }
+        button{
+            border: 0;
+            background-color: transparent;
+            font-size: 20px;
+            font-weight: bold;
+            color:darkblue;
+        }
+        ul{
+            list-style:none;
+            padding:50px 200px;
+        }
+        ul li{
+            display:inline;
+            padding: 0 10px;
+            letter-spacing: 5px;
+        }
+        a{
+            color: darkblue;
+            font-weight: bold;
+            text-decoration-line: none;
+        }
+        div#line{
+            border-bottom: 7px solid darkblue;
+            height:10px;
+            clear:both;
+        }
+
+
+
+        
+
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <header><a href="main.html"><img class="taeguk" src="picture/main/taeguk.png"><h2>Korea<br/>Tourist<br/>Attraction</h2></a></header>
+        <nav> 
+            <ul>
+                <li><button onclick="scrollToTema()">관심사별</button></li>
+                <li><button onclick="scrollToRegion()">지역별</button></li>
+                <li><button onclick="scrollToTema()">즐겨찾기</button></li>
+            </ul>
+        </nav>
+        <div id="line"> </div>
+</div>
+
+
+</body>
+</html>
