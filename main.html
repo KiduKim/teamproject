@@ -2,7 +2,28 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <script>
+        function scrollToTema() {
+            const element = document.getElementById("tema");
+            const offset = 200;
+            if (element) {
+                const top = element.offsetTop; 
+                window.scrollTo(0, top - offset); 
+            }
+        }
+        function scrollToRegion() {
+            const element = document.getElementById("tema"); 
+            const offset = 200; 
+            if (element) {
+                const top = element.offsetTop;
+                window.scrollTo(0, top - offset); 
+            }
+        }
+    </script>
     <style>
+        html{
+	        scroll-behavior: smooth;
+        }
         @font-face {
             font-family: 'TTWanjudaedunsancheB';
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2') format('woff2');
@@ -51,6 +72,13 @@
             width: 80%;
             height: 100px;
         }
+        button{
+            border: 0;
+            background-color: transparent;
+            font-size: 20px;
+            font-weight: bold;
+            color:darkblue;
+        }
         ul{
             list-style:none;
             padding:50px 200px;
@@ -84,7 +112,7 @@
             height: auto;
             border-radius: 20px;
         }
-        div#body{
+        div#tema{
             z-index: 2;
             padding-top: 3%;
         }
@@ -151,9 +179,9 @@
         <header><a href="main.html"><h2>Korea<br/>Tourist<br/>Attraction</h2></a></header>
         <nav> 
             <ul>
-                <li><a href="#">관심사별</a></li>
-                <li><a href="#">지역별</a></li>
-                <li><a href="#">즐겨찾기</a></li>
+                <li><button onclick="scrollToTema()">관심사별</button></li>
+                <li><button onclick="scrollToRegion()">지역별</button></li>
+                <li><button onclick="scrollToTema()">즐겨찾기</button></li>
             </ul>
         </nav>
         <div id="line"> </div>
@@ -177,7 +205,7 @@
 <p style="margin-top:10%; color: darkblue; font-size: 270%; font-weight:bold; font-family: 'Happiness-Sans-Title'; margin-bottom: 0px;">
     테마별 여행지</p>
 <div id="line-2"></div>
-<div id="body">
+<div id="tema">
     <div class="topic">
         <div class="subtopic"><a href='#'><img id="sub" src="picture/main/food-main.jpg"><span class="imtext">지역별 맛집</span></a></div>
         <div class="subtopic"><a href='#'><img id="sub" src="picture/main/history-main.jpg"><span class="imtext">한국의</br>역사유적</span></a></div>
@@ -196,9 +224,11 @@
         <div class="subtopic"><a href='#'><img id="sub" src="picture/main/themepark-main.jpg"><span class="imtext">짜릿한</br>테마파크</span></a></div>
         <div class="subtopic"><a href='#'><img id="sub" src="picture/main/sports-main.jpg"><span class="imtext">다양한</br>스포츠</span></a></div>
     </div>
-    <p style="color: darkblue; font-size: 270%; font-weight:bold; font-family:'Happiness-Sans-Title' ; margin-bottom:0px;">
-        지역별 여행지</p>
-    <div id="line-2"></div>
+    <div id="region">
+        <p style="color: darkblue; font-size: 270%; font-weight:bold; font-family:'Happiness-Sans-Title' ; margin-bottom:0px;">
+            지역별 여행지</p>
+        <div id="line-2"></div>
+    </div>
 </div>
 
 </body>
