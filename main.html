@@ -2,8 +2,46 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+    <script>
+        function scrollToTema() {
+            const element = document.getElementById("tema");
+            const offset = 200;
+            if (element) {
+                const top = element.offsetTop; 
+                window.scrollTo(0, top - offset); 
+            }
+        }
+        function scrollToRegion() {
+            const element = document.getElementById("tema"); 
+            const offset = 200; 
+            if (element) {
+                const top = element.offsetTop;
+                window.scrollTo(0, top - offset); 
+            }
+        }
+    </script>
     <style>
+        html{
+	        scroll-behavior: smooth;
+        }
+        @font-face {
+            font-family: 'TTWanjudaedunsancheB';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Happiness-Sans-Title';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+            font-weight: bolder;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'NanumSquareNeo-Variable';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+            font-weight: lighter;
+            font-style: normal;
+    }
         body {
             padding-bottom:  60px;
             margin-left: 10%;
@@ -11,7 +49,7 @@
             margin-top: 0%;
         }
         div#menu{
-            z-index: 1;
+            z-index: 3;
             background-color: white;
             position:fixed; 
             width:80%;
@@ -29,10 +67,24 @@
             height: 100px;
             float:left;
         }
+        .taeguk{
+            position:absolute;
+            width:35px;
+            height:35px;
+            left:90px;
+            top:40px;
+        }
         nav{
             float:left;
             width: 80%;
             height: 100px;
+        }
+        button{
+            border: 0;
+            background-color: transparent;
+            font-size: 20px;
+            font-weight: bold;
+            color:darkblue;
         }
         ul{
             list-style:none;
@@ -67,7 +119,7 @@
             height: auto;
             border-radius: 20px;
         }
-        div#body{
+        div#tema{
             z-index: 2;
             padding-top: 3%;
         }
@@ -84,6 +136,7 @@
             margin-bottom:20px;
         }
         .imtext{
+            z-index: 2;
             text-align: center;
             position:absolute;      
             top:100px;
@@ -119,22 +172,23 @@
         }
         .title-text{
             position: absolute;
-            top: 60%;
+            top: 55%;
             left: 5%;
             color: white;
-            font-size: 500%;
+            font-family: 'TTWanjudaedunsancheB';
+            font-size: 530%;
             font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div id="menu">
-        <header><a href="main.html"><h2>Korea<br/>Tourist<br/>Attraction</h2></a></header>
+        <header><a href="main.html"><img class="taeguk" src="picture/main/taeguk.png"><h2>Korea<br/>Tourist<br/>Attraction</h2></a></header>
         <nav> 
             <ul>
-                <li><a href="#">관심사별</a></li>
-                <li><a href="#">지역별</a></li>
-                <li><a href="#">즐겨찾기</a></li>
+                <li><button onclick="scrollToTema()">관심사별</button></li>
+                <li><button onclick="scrollToRegion()">지역별</button></li>
+                <li><button onclick="scrollToTema()">즐겨찾기</button></li>
             </ul>
         </nav>
         <div id="line"> </div>
@@ -142,23 +196,23 @@
 <div id="title">
     <div class="title-container">
         <img id="title" src="picture/main/title-main.jpg">
-        <span class="title-text">당신을 위한</br>여행지를 찾아볼까요?<span>
+        <span class="title-text">당신을 위한</br>여행지를 찾아볼까요?<span><p style="font-size:35%; margin-top:0%; font-family: 'NanumSquareNeo-Variable';">지역별 맛집, 역사유적, 하이킹 , 해변, 액티비티, 테마파크까지<br/>당신을 위한 맞춤 여행지와 여행정보를 편리하게 확인하세요</p>
     </div><br/>
 </div>
 <div id="intro">
-    <p style="color: darkblue; font-size: 300%; font-weight:bold; font-family:'nanumpenscript'; margin-bottom:0px;">
+    <p style="color: darkblue; font-size: 300%; font-weight:bold; font-family: 'Happiness-Sans-Title'; margin-bottom:0px;">
         <strong>여행지의 새로운 기준을 제시합니다</strong>
         <br/>테마별& 지역별 관광지를 소개합니다
     </p>
     <div id="line-2"></div>
-    <p style="color:  gray; font-size: 130%; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >
+    <p style="color:  gray; font-size: 130%; font-family:  'NanumSquareNeo-Variable';" >
               <em>코로나19로 인해 여행을 못한 지난 시간 동안, 우리는 여행에 대한 갈망을 더욱 키워왔습니다. 이제 2023년, 코로나 방역 수칙이 점차 완화되면서 해외 여행지와 더불어 국내 여행지도 다시 주목받고 있습니다. 우리나라에는 다채롭고 아름다운 여행지가 곳곳에 숨어있습니다. 푸른 바다와 아름다운 해변을 만끽할 수 있는 해안도로, 역사와 문화를 체험할 수 있는 유적지, 자연 속에서 즐길 수 있는 산과 계곡들, 그리고 맛있는 음식과 함께하는 지역별 맛집들까지. 다양한 매력으로 가득한 국내 여행지를 추천해 드립니다. 함께 멋진 추억을 만들어보세요!</em>
     </p>
 </div>
-<p style="margin-top:10%; color: darkblue; font-size: 270%; font-weight:bold; font-family:'nanumpenscript'; margin-bottom:0px; margin-bottom:0px;">
+<p style="margin-top:10%; color: darkblue; font-size: 270%; font-weight:bold; font-family: 'Happiness-Sans-Title'; margin-bottom: 0px;">
     테마별 여행지</p>
 <div id="line-2"></div>
-<div id="body">
+<div id="tema">
     <div class="topic">
         <div class="subtopic"><a href='#'><img id="sub" src="picture/main/food-main.jpg"><span class="imtext">지역별 맛집</span></a></div>
         <div class="subtopic"><a href='#'><img id="sub" src="picture/main/history-main.jpg"><span class="imtext">한국의</br>역사유적</span></a></div>
@@ -177,9 +231,11 @@
         <div class="subtopic"><a href='#'><img id="sub" src="picture/main/themepark-main.jpg"><span class="imtext">짜릿한</br>테마파크</span></a></div>
         <div class="subtopic"><a href='#'><img id="sub" src="picture/main/sports-main.jpg"><span class="imtext">다양한</br>스포츠</span></a></div>
     </div>
-    <p style="color: darkblue; font-size: 270%; font-weight:bold; font-family:'nanumpenscript'; margin-bottom:0px;">
-        지역별 여행지</p>
-    <div id="line-2"></div>
+    <div id="region">
+        <p style="color: darkblue; font-size: 270%; font-weight:bold; font-family:'Happiness-Sans-Title' ; margin-bottom:0px;">
+            지역별 여행지</p>
+        <div id="line-2"></div>
+    </div>
 </div>
 
 </body>
