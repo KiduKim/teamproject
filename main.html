@@ -4385,16 +4385,37 @@
                     <line class="st2" x1="513.9" y1="1315.9" x2="663.9" y2="1165.9" />
                 </svg>
             </div>
-            <div id="explain">
-                <div id="photo">
-                    <h1>&nbsp</h1>
-                    <p>&nbsp&nbsp&nbsp지도에 커서를 올려보세요!</p>
+            <!--화면이 처음 띄워졌을 때-->
+            <div id="explain"> <!--이건 설명창을 나타내는 div 영역임-->
+                <div id="photo"> <!--아이디는 포토긴 한데 어쩌다보니 설명을 쓰게됨-->
+                    <h1>&nbsp</h1> <!--간격 조절용-->
+                    <p>&nbsp&nbsp&nbsp지도에 커서를 올려보세요!</p><!--안내문구-->
                 </div>
-                <div id="script">
+                <div id="script"> <!--아이디는 스크립트긴 한데 어쩌다보니 사진이 있음-->
                     <h1>&nbsp</h1>
-                    <img src="./picture/map/black.bmp" style="width: 100%; height: auto;"/>
+                    <img src="./picture/map/black.bmp" style="width: 100%; height: auto;"/> <!--간격 맞추기용 사진-->
                 </div>
             </div>
+            <!--
+                var targetElement = document.getElementById('explain');
+                -> 이건 손댈 필요 없음
+
+                var path = document.getElementById('gg');
+                path.addEventListener('mouseover', function () {
+                    targetElement.classList.add('hovered'); ->id가 gg(경기)인 path에 마우스가 올라갈 때
+                    targetElement.innerHTML = '<div id="leftdummy">&nbsp</div><div id="rightdummy">&nbsp</div><div id="photo"><h1>경기도</h1><p>경기도는 교외 여행과 일일 관광을 즐기기에 안성맞춤입니다. 경기도에는 힐링과 휴식을 위한 아름다운 자연 공간들이 많이 있습니다. 가장 유명한 곳 중 하나인 남한산성은 조선 시대의 유적지로, 아름다운 산책로와 역사적인 성벽을 경험할 수 있습니다. 성남에 위치한 수원화성은 조선 왕조의 왕궁으로, 아름다운 정원과 전통 건축물을 감상할 수 있습니다. 또한, 자연 보호구역도 많아 산악 등반, 등산, 자전거 타기 등 액티비티를 즐길 수 있습니다.</p></div><div id="script"><h1>&nbsp</h1><img src="./picture/map/gg.png" style="width: 100%; height: auto;"/></div>';
+                    -> explain div 영역의 내부 코드를 따옴표 안에 있는 것으로 바꿈
+                    leftdummy와 rightdummy는 간격 맞춘다고 넣은것임
+                });
+
+                path.addEventListener('mouseout', function () {
+                    targetElement.classList.remove('hovered'); ->id가 gg(경기)인 path에서 마우스가 내려올 때
+                    targetElement.innerHTML = '<div id="photo"><h1>&nbsp</h1><p>&nbsp&nbsp&nbsp지도에 커서를 올려보세요!</p></div><div id="script"><h1>&nbsp</h1><img src="./picture/map/black.bmp" style="width: 100%; height: auto;"/></div>';
+                    -> explain div 영역의 내부 코드를 따옴표 안에 있는 것으로 바꿈
+                    기본값으로 되돌아가는 것
+                });
+
+            -->
             <script>
                 var targetElement = document.getElementById('explain');
 
