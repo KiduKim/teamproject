@@ -8,7 +8,6 @@
             mainWindow.onload = function() {
             var element = mainWindow.document.getElementById('tema');
             var yOffset = -200;
-
             if (element) {
                 var rect = element.getBoundingClientRect();
                 var absoluteY = rect.top + mainWindow.pageYOffset;
@@ -20,9 +19,8 @@
         function scrollToRegion(){
             var mainWindow = window.open('main.html', '_blank');
             mainWindow.onload = function() {
-            var element = mainWindow.document.getElementById('Region');
+            var element = mainWindow.document.getElementById('region');
             var yOffset = -200;
-
             if (element) {
                 var rect = element.getBoundingClientRect();
                 var absoluteY = rect.top + mainWindow.pageYOffset;
