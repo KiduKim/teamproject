@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <script>
+        function closeIt(){
+            window.close();
+        }
         function scrollToTema() {
             var mainWindow = window.open('main.html', '_blank');
             mainWindow.onload = function() {
@@ -15,6 +18,7 @@
                 mainWindow.scrollTo({ top: targetY, behavior: 'smooth' });
             }
             };
+            setTimeout(closeIt,500);
         }
         function scrollToRegion(){
             var mainWindow = window.open('main.html', '_blank');
