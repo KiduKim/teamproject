@@ -3,32 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <script>
-        function scrollToTema() {
-            var mainWindow = window.open('main.html', '_blank');
-            mainWindow.onload = function() {
-            var element = mainWindow.document.getElementById('tema');
-            var yOffset = -200;
-            if (element) {
-                var rect = element.getBoundingClientRect();
-                var absoluteY = rect.top + mainWindow.pageYOffset;
-                var targetY = absoluteY + yOffset;
-                mainWindow.scrollTo({ top: targetY, behavior: 'smooth' });
-            }
-            };
+        function goToTema() {
+            window.location.href="main.html#temaline";
         }
-        function scrollToRegion(){
-            var mainWindow = window.open('main.html', '_blank');
-            mainWindow.onload = function() {
-            var element = mainWindow.document.getElementById('region');
-            var yOffset = -200;
-
-            if (element) {
-                var rect = element.getBoundingClientRect();
-                var absoluteY = rect.top + mainWindow.pageYOffset;
-                var targetY = absoluteY + yOffset;
-                mainWindow.scrollTo({ top: targetY, behavior: 'smooth' });
-            }
-            };
+        
+        function goToRegion() {
+            window.location.href="main.html#regionline";
         }
     </script>
     <style>
@@ -203,8 +183,8 @@
         <header><a href="main.html"><img class="taeguk" src="picture/main/taeguk.png"><h2>Korea<br/>Tourist<br/>Attraction</h2></a></header>
         <nav> 
             <ul>
-                <li><button onclick="scrollToTema()">관심사별</button></li>
-                <li><button onclick="scrollToRegion()">지역별</button></li>
+                <li><button onclick="goToTema()">관심사별</button></li>
+                <li><button onclick="goToRegion()">지역별</button></li>
                 <li><button onclick="scrollToTema()">즐겨찾기</button></li>
             </ul>
         </nav>
