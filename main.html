@@ -21,6 +21,14 @@
                 window.scrollTo(0, top - offset);
             }
         }
+        function scrollToLink() {
+            const element = document.getElementById("link");
+            const offset = 200;
+            if (element) {
+                const top = element.offsetTop;
+                window.scrollTo(0, top - offset);
+            }
+        }
     </script>
     <style>
         html {
@@ -264,6 +272,17 @@
             width:50%;
             height:40px;
         }
+        #link{
+            position: absolute;
+            z-index: 2;
+            top:3000px;
+        }
+        h3{
+            margin-top:20px;
+        }
+        #lastfirst{
+            margin-top:30px;
+        }
     </style>
 </head>
 
@@ -290,7 +309,7 @@
             <ul>
                 <li><button onclick="scrollToTema()">관심사별</button></li>
                 <li><button onclick="scrollToRegion()">지역별</button></li>
-                <li><button onclick="scrollToTema()">즐겨찾기</button></li>
+                <li><button onclick="scrollToLink()">지역관광청</button></li>
             </ul>
         </nav>
         <div id="line"> </div>
@@ -4618,6 +4637,28 @@
                 });
             </script>
         </div>
+        <div id="link">
+            <p
+                style="color: darkblue; font-size: 270%; font-weight:bold; font-family:'Happiness-Sans-Title' ; margin-bottom:0px;">
+                지역별 관광청 링크</p>
+            <div id="line-2">
+            </div>
+
+            <h3 id="lastfirst"><a href="https://korean.visitseoul.net/index">서울 관광청 visit seoul 바로가기</a></h3>
+            <h3><a href="https://ggtour.or.kr/main.php">경기 관광포털 바로가기</a></h3>
+            <h3><a href="https://www.ito.or.kr/">인천 관광청 바로가기</a></h3>
+            <h3><a href="https://tour.chungbuk.go.kr/www/index.do">충북 나드리 바로가기</a></h3>
+            <h3><a href="https://tour.chungnam.go.kr/html/kr/">충남 관광청 바로가기</a></h3>
+            <h3><a href="https://tour.jb.go.kr/index.do">전북 관광청 바로가기</a></h3>
+            <h3><a href="http://ijnto.or.kr/">전남 관광재단 바로가기</a></h3>
+            <h3><a href="http://ijnto.or.kr/">전북 관광재단 바로가기</a></h3>
+            <h3><a href="https://www.gb.go.kr/Main/open_contents/section/culture/page.do?mnu_uid=1690&">경상북도청 바로가기</a></h3>
+            <h3><a href="https://tour.gyeongnam.go.kr/index.gyeong">경남 관광 길잡이 바로가기</a></h3>
+            <h3><a href="https://bto.or.kr/kor/Main.do">부산 관광공사 바로가기</a></h3>
+            <h3><a href="https://ijto.or.kr/korean/">제주 관광공사 바로가기</a></h3>
+        </div>
+        </div>
+            
         <div class="bottom"></div>
 </body>
 
